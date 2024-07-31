@@ -1,13 +1,25 @@
-<BoxLayout>:
+<MDScreen>:
 	orientation: "vertical"
-	Label:
-		text: "Time"
-		font_size: 64
-		color: 0.71, 0.0632, 0.89, 1
-	Label:
-		text: "-"
-		font_size: 64
-	Button:
-		text: "Generate"
-		font_size: 32
-		size: 100, 50
+    md_bg_color: self.theme_cls.backgroundColor
+	
+	MDLabel:
+		id: alarm_label
+		halign: "center"
+		markup: True
+		text: "[size=48]Alarms[/size]"
+		color: 0.24, 0.96, 0.4, 1
+		pos_hint: {"y": 0.45}
+	
+	ScrollView:
+		pos_hint: {"center_y": 0.5, "center_x_": 0.5}
+		size_hint: 0.9, 0.8
+		MDList:
+			id: container
+	
+	MDFabButton:
+		icon: "plus"
+		color: 0.24, 0.96, 0.4, 1
+		style: "standard"
+		elevation_normal: 12
+		pos_hint: {"x": 0.45, "y": 0.04 }
+		#on_release:
